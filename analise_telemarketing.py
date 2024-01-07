@@ -1,9 +1,11 @@
 import streamlit as st
+import requests
 import os
 import pandas as pd
 import  base64
 import plotly.express as px
 from io import BytesIO
+from PIL import Image
 
 # Função para filtrar a multiseleção de categorias
 def multiselect_filter(df, column, selected_values):
@@ -33,12 +35,15 @@ st.title('Análise de Telemarketing')
 st.markdown("---")
 
 # Caminho para a pasta onde está localizada a imagem
-path_to_image = 'C:/Users/adilt/Desktop/Ebac/Notebooks/Cientista de dados/Mod19/img/Bank-Branding.jpg'
+url = 'https://raw.githubusercontent.com/AdiltonCarvalho/Analise_de_telemarketing/main/Bank-Branding.jpg'
 
-# Verifica se o arquivo de imagem existe no caminho especificado
-if os.path.exists(path_to_image):
-    uploaded_image = open(path_to_image, 'rb').read()
-    st.sidebar.image(uploaded_image, use_column_width=True)
+# Verifica se a imagem está disponível
+response = requests.head(url)
+if response.status_code == 200:    
+    # Faz o download e exibe a imagem
+    image_response = requests.get(url)
+    image = Image.open(BytesIO(image_response.content))
+    st.sidebar.image(image, use_column_width=True)
 else:
     st.sidebar.warning('Imagem não encontrada')
 
