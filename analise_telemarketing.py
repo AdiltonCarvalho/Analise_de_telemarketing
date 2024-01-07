@@ -24,11 +24,25 @@ def download_excel(dataframe, filename, sheet_name='Sheet1'):
     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="{filename}.xlsx">Download Excel</a>'
     return href
 
-# Configuração da página
-st.set_page_config(page_title = 'Análise de Telemarketing',
-                    page_icon = 'C:/Users/adilt/Desktop/Ebac/Notebooks/Cientista de dados/Mod19/img/telmarketing_icon.png',
-                    layout = "wide",
-                    initial_sidebar_state = 'expanded')
+# URL do ícone da página no repositório do GitHub
+url_icone = 'https://raw.githubusercontent.com/AdiltonCarvalho/Analise_de_telemarketing/main/telmarketing_icon.png'
+
+# Faz o download do ícone usando requests
+response = requests.get(url_icone)
+if response.status_code == 200:
+    # Lê o conteúdo da imagem
+    image = Image.open(BytesIO(response.content))
+    
+    # Configuração da página do Streamlit
+    st.set_page_config(page_title='Análise de Telemarketing',
+                        page_icon=image,
+                        layout='wide',
+                        initial_sidebar_state='expanded')
+else:
+    # Configuração da página do Streamlit com ícone padrão
+    st.set_page_config(page_title='Análise de Telemarketing',
+                        layout='wide',
+                        initial_sidebar_state='expanded')
 
 # Título da aplicação
 st.title('Análise de Telemarketing')
