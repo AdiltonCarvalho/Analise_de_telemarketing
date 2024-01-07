@@ -15,22 +15,28 @@ Este projeto é uma aplicação desenvolvida em Streamlit para realizar análise
 
 - **Base de Dados**.
 - **Arquivo .py**
+- **Imagem do menu**
+- **Ícone da página**
+- **Arquivo com as bibliotecas necessárias**
 
 ## Amostra
 [streamlit-analise_telemarketing-2023-12-08-17-12-80.webm](https://github.com/AdiltonCarvalho/Analise_de_telemarketing/assets/141254502/f3bf9bba-de8e-4d2c-bec1-e3f562b5a7fb)
+
+## Acesso externo
+https://gdjquhsnb2zcyhbmkeu34x.streamlit.app/
 
 ## Como Executar o Projeto
 
 ### Pré-requisitos
 
 - Python instalado
-- Instalação das bibliotecas necessárias: `streamlit`, `pandas`, `plotly`, `xlsxwriter`
-
+- Instalação das bibliotecas necessárias: `streamlit`, `pandas`, `plotly`, `xlsxwriter`, `pillow`
+  
 ### Execução
 
 1. Clone o repositório ou faça o download do código.
 2. Instale as dependências necessárias utilizando `pip install -r requirements.txt`.
-3. Execute o comando `streamlit run nome_do_arquivo.py` no terminal.
+3. Execute o comando `streamlit run analise_telemarketing.py` no terminal.
 4. Acesse a URL local fornecida para interagir com a aplicação.
 
 Certifique-se de ter a base de dados no formato CSV para carregar e interagir com a aplicação.
