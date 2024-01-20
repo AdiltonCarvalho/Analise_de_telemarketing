@@ -18,6 +18,7 @@ Este projeto é uma aplicação desenvolvida em Streamlit para realizar análise
 - **Imagem do menu**
 - **Ícone da página**
 - **Arquivo com as bibliotecas necessárias**
+- **Arquivo requirements**
 
 ## Amostra
 [streamlit-analise_telemarketing-2024-01-20-09-01-29.webm](https://github.com/AdiltonCarvalho/Analise_de_telemarketing/assets/141254502/a7a084bf-af1f-4c36-8128-fb335be0d9ff)
